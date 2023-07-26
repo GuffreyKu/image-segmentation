@@ -1,0 +1,12 @@
+model:
+  Input_channel: 3 # define input channel, Gray scale is "1" or RGB scale is "3".
+  Image_size : [640, 320] # define Input image size [w, h]
+  K_size : 3 # define all cnn filter size, its can any number.
+  class : 2
+train: 
+  train_csv: "./datasets/train.csv"
+  test_csv: "./datasets/valid.csv"
+  Epoch : 800 # define how many train times.
+  BatchSize : 32 # define number of data in train.
+  saved_path : "/Users/guffrey/m1_inference/image-segmentation/saved_model/seg.pt"
+  traced_path : "/Users/guffrey/m1_inference/image-segmentation/saved_model/trace.pt"
