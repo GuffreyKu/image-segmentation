@@ -2,12 +2,12 @@ import torch
 import torch.nn.functional as F
 import torch_optimizer as optim
 from torch.optim import lr_scheduler
-from torch.cuda.amp import autocast as autocast
+from torch.cuda.amp import autocast
 
 from PTdata.Dataset import ImageDataset
 from options.config import Config
 from models.model_select import SelectTransforModel
-from gaskLibs.utils.pytorchtools import EarlyStopping
+from libs.utils.pytorchtools import EarlyStopping
 
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")

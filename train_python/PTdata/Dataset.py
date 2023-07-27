@@ -20,14 +20,12 @@ class ImageDataset(Dataset):
 
         with open(csv_path, newline='') as csvfile:
             rows = csv.reader(csvfile)
-            header = next(rows)
+            _ = next(rows)
             for row in rows:
                 self.img_path.append(row[0])
                 self.labels.append(row[1])
 
     def __getitem__(self, index):
-        # print(self.img_path[index])
-        # print(self.labels[index])
 
         img = cv2.imread(self.img_path[index])
         img = cv2.resize(img, (self.img_w, self.img_h))
@@ -35,6 +33,7 @@ class ImageDataset(Dataset):
 
         img_map = cv2.imread(self.labels[index])
         img_map = cv2.resize(img_map, (self.img_w, self.img_h))
+
         # pixel label to class label
         img_map = img_map / 255
         img_map = img_map.astype(int)
