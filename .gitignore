@@ -2,3 +2,7 @@
 __pycache__/
 .DS_Store
 .vscode/
+train_python/datasets/images
+train_python/datasets/masks
+train_python/datasets/*.csv
+build
